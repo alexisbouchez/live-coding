@@ -2,12 +2,12 @@ POST http://localhost:3000/api/skill
 Content-Type: application/json
 
 {
-    "name": "Express"
+    "name": "CSS"
 }
 
 ###
 
-GET http://localhost:3000/api/skill
+GET http://localhost:5000/api/skill
 
 ###
 

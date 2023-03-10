@@ -7,7 +7,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/api/wilder
+GET http://localhost:5000/api/wilder
 
 ###
 
@@ -24,4 +24,4 @@ DELETE http://localhost:3000/api/wilder/5
 
 ###
 
-POST http://localhost:3000/api/wilder/1/skill/3/add
+POST http://localhost:5000/api/wilder/4/skill/6/add
