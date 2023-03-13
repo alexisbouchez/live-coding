@@ -1,8 +1,8 @@
 const Skill = require("../entity/Skill");
 const { dataSource } = require("../utils");
 
-module.exports = {
-  create: async (req, res) => {
+class SkillController {
+  static async create(req, res) {
     try {
       await dataSource.getRepository(Skill).save(req.body);
     } catch (error) {
@@ -13,12 +13,14 @@ module.exports = {
     }
 
     res.send("Create skill");
-  },
-  read: async (req, res) => {
+  }
+
+  static async read(req, res) {
     const skills = await dataSource.getRepository(Skill).find();
     res.send(skills);
-  },
-  update: async (req, res) => {
+  }
+
+  static async update(req, res) {
     const { id } = req.params;
 
     const existingSkill = await dataSource.getRepository(Skill).findOneBy({
@@ -30,8 +32,9 @@ module.exports = {
 
     await dataSource.getRepository(Skill).update(id, req.body);
     res.send("Update skill");
-  },
-  delete: async (req, res) => {
+  }
+
+  static async delete(req, res) {
     const { id } = req.params;
 
     const existingSkill = await dataSource.getRepository(Skill).findOneBy({
@@ -43,5 +46,7 @@ module.exports = {
 
     await dataSource.getRepository(Skill).delete(id);
     res.send("Deleted Skill");
-  },
-};
+  }
+}
+
+module.exports = SkillController;
